@@ -1,0 +1,135 @@
+{
+  "info": {
+    "name": "Lab3 Expenses API (Golub 3205)",
+    "_postman_id": "d2a0b2b1-7c7a-42f1-8f6a-3205abcabcde",
+    "description": "Postman collection for Lab3: categories (global & user), expenses CRUD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-User-Id",
+            "value": "{{userId}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Categories",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-User-Id",
+            "value": "{{userId}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/categories",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "categories"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Category",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-User-Id",
+            "value": "{{userId}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"\\u0407\\u0436\\u0430\"}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/categories",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "categories"
+          ]
+        }
+      }
+    },
+    {
+      "name": "List Expenses",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-User-Id",
+            "value": "{{userId}}"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/api/expenses",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "expenses"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Create Expense (no category)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "X-User-Id",
+            "value": "{{userId}}"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"amount\": \"120.50\", \"description\": \"\\u043a\\u0430\\u0432\\u0430\"}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/expenses",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "api",
+            "expenses"
+          ]
+        }
+      }
+    }
+  ]
+}
